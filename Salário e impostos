@@ -1,0 +1,61 @@
+Algoritmo "IRRF_INSS"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 13/03/2024
+Var
+// Seção de Declarações das variáveis 
+INSS: REAL
+IRRF: REAL
+SALARIO: REAL
+PORCENTAGEM: REAL
+//DESCONTO:REAL
+SALARIOLIQUIDO: REAL
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+   ESCREVAL("DIGITE SEU SALARIO")
+   LEIA(SALARIO)
+
+   SE(SALARIO < 2112.01) ENTAO
+     IRRF <- 0  //AO INVES DESCONTO
+   SENAO
+      SE(SALARIO < 2826.66) ENTAO
+        IRRF <- 158.40
+      SENAO
+         SE(SALARIO < 3751.06) ENTAO
+           IRRF <- 370.40
+         SENAO
+           SE(SALARIO < 4664.69)
+             IRRF <- 651.73
+           SENAO
+            IRRF <- 884.96
+
+           FIMSE
+         FIMSE
+      FIMSE
+   FIMSE
+            
+   //IRRF <- SALARIO - DESCONTO
+
+   SE(SALARIO < 1412.01) ENTAO
+     PORCENTAGEM <- 0.075
+   SENAO
+       SE(SALARIO < 2666.69) ENTAO
+         PORCENTAGEM <- 0.09
+       SENAO
+           SE(SALARIO < 4000.04) ENTAO
+             PORCENTAGEM <- 0.12
+           SENAO
+             PORCENTAGEM <- 0.14
+           FIMSE
+       FIMSE
+   FIMSE
+
+   INSS <- SALARIO * PORCENTAGEM
+
+
+   SALARIOLIQUIDO <- SALARIO - IRRF - INSS
+
+   ESCREVAL("SEU SALARIO É:  ", SALARIOLIQUIDO )
+Fimalgoritmo
